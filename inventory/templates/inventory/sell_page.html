@@ -1,0 +1,32 @@
+{% extends "inventory/layout.html" %}
+
+{% block body %}
+<div class="container px-4 pt-2">
+   
+    <h3>Sell {{ type }}</h3>
+    {% if vehicles %}
+    <form action="{% url 'sale' %}" method="post">
+        <div class="mb-3 mt-3">
+          <label for="vehicleId" class="form-label">Select Vehicle:</label>
+          <select class="form-select" id="vehicleId" name="vehicleId">
+            {% for vehicle in vehicles %}
+                <option value="{{ vehicle.id }}">{{ vehicle }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="buyerName" class="form-label">Buyer Name</label>
+          <input type="text" class="form-control" id="buyerName" placeholder="Enter buyer name" name="buyerName">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    {% else %}
+        <h1>No vehicles available!</h1>
+    {% endif %}
+
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "inventory/layout.html" %}
+{% load static %}
+
+{% block body %}
+<div class="d-flex flex-column container pt-2">
+
+    <div class="row">
+        <div class="col-12 col-md-4">
+            <div class="p-3 border"  style="background-color:cornflowerblue">
+                <div style="color: aliceblue;">Revenues</div>
+                <div class="d-flex justify-content-between">
+                    <div style="color: aliceblue;" class="fs-4">$ <span class="fw-bold fs-3">{{ revenues }}.00</span></div>
+                    <a href="{% url 'revenues' %}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+                            <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
+                        </svg>
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="p-3 border"  style="background-color:darkturquoise">
+                <div style="color: aliceblue;">Profit </div>
+                <div class="d-flex justify-content-between">
+                    <div style="color: aliceblue;" class="fs-4">$ <span class="fw-bold fs-3">{{ profit }}.00</span></div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="p-3 border"  style="background-color:mediumpurple">
+                <div style="color: aliceblue;">Inventory </div>
+                <div class="d-flex justify-content-between">
+                    <div style="color: aliceblue;" class="fs-4">$ <span class="fw-bold fs-3">{{ inventory }}.00</span></div>
+                    <a href="{% url 'vehicles' %}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+                            <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="d-flex flex-column col-12 col-sm-4 px-1 p-2">
+            <canvas height="600px" id="revenuesChart"></canvas>
+            <div class="mx-auto mt-1">Revenues by Cars, EVs, Vans</div>
+        </div>
+        <div class="d-flex flex-column col-12 col-sm-4 px-1 p-2">
+            <canvas height="600px" id="profitsChart"></canvas>
+            <div class="mx-auto mt-1">Profits by Cars, EVs, Vans</div>
+        </div>
+        <div class="d-flex flex-column col-12 col-sm-4 px-1 p-2">
+            <canvas height="600px" id="unsoldChart"></canvas>
+            <div class="mx-auto mt-1">Inventory value by Cars, EVs, Vans</div>
+        </div>
+    </div>
+
+</div>
+
+    {% block script %}
+    <!-- Default JavaScript code goes heres -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="{% static 'inventory/utils.js' %}"></script>
+    <script src="{% static 'inventory/index.js' %}"></script>
+
+    {% endblock script %}
+
+{% endblock %}
+
+
+

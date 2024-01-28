@@ -1,0 +1,43 @@
+{% extends "inventory/layout.html" %}
+
+{% block body %}
+<div class="container px-4 pt-2">
+   
+    <h3>Vehicle Information</h3>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>VIN</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Year</th>
+                <th>Cost Price ($)</th>
+                <th>Selling Price ($)</th>
+                <th>Mileage</th>
+                <th>Color</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for vehicle in vehicles %}
+                <tr class="table-secondary">
+                    <td>{{ vehicle.vin }}</td>
+                    <td>{{ vehicle.brand }}</td>
+                    <td>{{ vehicle.model }}</td>
+                    <td>{{ vehicle.year }}</td>
+                    <td>{{ vehicle.cost_price }}</td>
+                    <td>{{ vehicle.selling_price }}</td>
+                    <td>{{ vehicle.mileage }}</td>
+                    <td>{{ vehicle.color }}</td>
+                </tr>
+            {% endfor %}
+            
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,113 @@
+{% extends "inventory/layout.html" %}
+
+{% block body %}
+<div class="container px-4 pt-2">
+   
+    <h3>Add {{ type }}</h3>
+    <form action="{% url 'create' %}" method="post">
+        <div class="flex mb-3 mt-3">
+
+          <div class="row mt-3">
+            <div class="col-sm-4">
+              <label for="vin" class="form-label">Vehicle Identification Number</label>
+              <input type="text" maxlength="30" class="form-control" id="vin" placeholder="Enter VIN" name="vin">
+            </div>
+            <div class="col-sm-4">
+              <label for="brand" class="form-label">Brand</label>
+              <select class="form-select" id="brand" name="brand">
+                 <option value="Audi">Audi</option>
+                 <option value="BMW">BMW</option>
+                 <option value="Chevrolet">Chevrolet</option>
+                 <option value="Ferrari">Ferrari</option>
+                 <option value="Ford">Ford</option>
+                 <option value="Hyundai">Hyundai</option>
+                 <option value="Jeep">Jeep</option>
+                 <option value="Lamborghini">Lamborghini</option>
+                 <option value="Mercedes-Benz">Mercedes-Benz</option>
+                 <option value="Nissan">Nissan</option>
+                 <option value="Tesla">Tesla</option>
+                 <option value="Toyota">Toyota</option>
+                 <option value="Volkswagen">Volkswagen</option>
+                 <option value="Volvo">Volvo</option>
+              </select>
+            </div>
+            <div class="col-sm-4">
+              <label for="model" class="form-label">Vehicle Model</label>
+              <input type="text" class="form-control" id="model" placeholder="Enter vehicle model" name="model">
+            </div>
+          </div>   
+                 
+          <div class="row mt-3">
+            <div class="col-sm-4">
+              <label for="year" class="form-label">Year</label>
+              <input type="number" class="form-control" id="year" placeholder="Enter year" name="year">
+            </div>
+            <div class="col-sm-4">
+              <label for="color" class="form-label">Color</label>
+              <input type="text" class="form-control" id="color" placeholder="Enter color" name="color">
+            </div>
+            <div class="col-sm-4">
+              <label for="mileage" class="form-label">Mileage (km)</label>
+              <input type="number" class="form-control" id="mileage" placeholder="Enter mileage" name="mileage">
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-sm-4">
+              <label for="image" class="form-label">Image</label>
+              <input type="file" class="form-control" id="image" placeholder="Enter image" name="image">
+            </div>
+            <div class="col-sm-4">
+              <label for="costPrice" class="form-label">Cost Price</label>
+              <input type="number" class="form-control" id="costPrice" placeholder="Enter cost price" name="costPrice">
+            </div>
+            <div class="col-sm-4">
+              <label for="sellingPrice" class="form-label">Selling Price</label>
+              <input type="number" class="form-control" id="sellingPrice" placeholder="Enter selling price" name="sellingPrice">
+            </div>
+          </div>   
+                 
+          <div class="row mt-3">
+            <div class="col-sm-4">
+              <label for="type" class="form-label">Type</label>
+              <input type="text" class="form-control" id="type" value="{{ stype }}" name="type" placeholder="{{ type }}" readonly>
+            </div>
+
+            {% if stype == 'car' or stype == 'van' %}
+            
+              <div class="col-sm-4">
+                <label for="fuelType" class="form-label">Fuel Type</label>
+                <select class="form-select" id="fuelType" name="fuelType">
+                  <option value="Petrol">Gasoline (Petrol):</option>
+                  <option value="Diesel">Diesel</option>
+                  <option value="Hybrid">Hybrid</option>
+                  <option value="CNG">Compressed Natural Gas (CNG)</option>
+                  <option value="LPG">Liquefied Petroleum Gas (LPG)</option>
+                  <option value="Hydrogen">Hydrogen</option>
+                </select>
+              </div>
+
+              <div class="col-sm-4">
+                <label for="fuelCapacityLiters" class="form-label">Fuel Capacity</label>
+                <input type="number" class="form-control" id="fuelCapacityLiters" placeholder="Enter Fuel Capacity" name="fuelCapacityLiters">
+              </div>
+
+            {% elif stype == 'ev' %}
+
+              <div class="col-sm-4">
+                <label for="batteryCapacity" class="form-label">Battery Capacity</label>
+                <input type="number" class="form-control" id="batteryCapacity" placeholder="Enter Battery Capacity" name="batteryCapacity">
+              </div>
+
+            {% endif %}
+
+          </div>           
+        
+        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+    </form>
+
+</div>
+
+
+
+{% endblock %}

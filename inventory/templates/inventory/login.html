@@ -1,0 +1,38 @@
+{% extends "inventory/layout.html" %}
+
+{% block body %}
+<section class="vh-100" style="background-color: #508bfb;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card shadow-2-strong" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+
+              <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+
+                <h3 class="mb-3">Login</h3>
+    
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" name="username" id="floatingInput" placeholder="name@example.com">
+                  <label for="floatingInput">Username</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
+                  <label for="floatingPassword">Password</label>
+                </div>
+
+                <button class="btn btn-primary w-100 mt-2" type="submit">Login</button>
+                {% if message %}
+                  <div class="text-danger">{{ message }}</div>
+                {% endif %}
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
