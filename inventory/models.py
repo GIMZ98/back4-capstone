@@ -23,7 +23,7 @@ class Vehicle(models.Model):
     type = models.CharField(max_length=3, null=True, blank=True)
 
     def __str__(self):
-        return f'{self.id} {self.brand} {self.model} ({self.year})' 
+        return f'ID:{self.id}, VIN:{self.vin}, BRAND:{self.brand}, model:{self.model}, YEAR:({self.year})' 
 
     @classmethod
     def get_sum_inventory_value(cls):
