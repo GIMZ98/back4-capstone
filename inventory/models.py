@@ -28,7 +28,8 @@ class Vehicle(models.Model):
     @classmethod
     def get_sum_inventory_value(cls):
         # Returns sum of selling prices of non sold vehicles
-        return cls.objects.filter(sold=False).aggregate(selling_prices=models.Sum('selling_price'))['selling_prices']
+        sum_inventory_value = cls.objects.filter(sold=False).aggregate(selling_prices=models.Sum('selling_price'))['selling_prices']
+        return sum_inventory_value if sum_inventory_value is not None else 0
 
     @classmethod
     def get_sum_cost_prices(cls):

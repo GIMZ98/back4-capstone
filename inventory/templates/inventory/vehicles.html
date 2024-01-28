@@ -32,7 +32,36 @@
                     <td>{{ vehicle.color }}</td>
                     <td>
                         {% if vehicle.image %}
-                            <a href="{{ vehicle.image.url }}" target="_blank"><img src="{{ vehicle.image.url }}" height="30px" width="30px" alt=""></a>
+                            <div data-bs-toggle="modal" data-bs-target="#myModal{{ vehicle.pk }}">
+                                <img src="{{ vehicle.image.url }}" height="30px" width="30px" alt="">
+                            </div>
+
+                            <!-- The Modal -->
+                            <div class="modal" id="myModal{{ vehicle.pk }}">
+                                <div class="modal-dialog">
+                                <div class="modal-content">
+                            
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                    <h4 class="modal-title">{{ vehicle.brand }}, {{ vehicle.model }}</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                            
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                    <img src="{{ vehicle.image.url }}" class="img-fluid" alt="">
+                                    </div>
+                            
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                            
+                                </div>
+                                </div>
+                            </div>
+  
+                            {% comment %} <a href="{{ vehicle.image.url }}" target="_blank"><img src="{{ vehicle.image.url }}" height="30px" width="30px" alt=""></a> {% endcomment %}
                         {% else %}
                             no image
                         {% endif %}
@@ -45,6 +74,7 @@
     </div>
 
 </div>
+
 
 
 

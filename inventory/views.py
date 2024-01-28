@@ -87,7 +87,7 @@ def data_charts(request, chart):
         'chart': chart,
         'data': data,
     }
-    print(response_data)
+
     # Return the data as JSON response
     return JsonResponse(response_data)
 
@@ -110,20 +110,29 @@ def sell(request):
 @csrf_exempt
 @require_http_methods(["POST"])
 def add(request):
+    
+    print(request.content_type)
+
+    vin = request.POST["vin"]
+
+    if Vehicle.objects.filter(vin=vin).exists():
+        return render(request, "inventory/add_page.html", {
+            "message": "Vehicle with this VIN already exists!"
+        })
 
     brand = request.POST["brand"]
     model = request.POST["model"]
     year = request.POST["year"]
     color = request.POST["color"]
     mileage = request.POST["mileage"]
-    vin = request.POST["vin"]
     costPrice = request.POST["costPrice"]
     sellingPrice = request.POST["sellingPrice"]
     type = request.POST["type"]
 
 
-    if 'image' in request.POST:
-        image = request.FILES.get('image')
+    if 'image' in request.FILES:
+        print("yes")
+        image = request.FILES['image']
     else:
         image = None
 

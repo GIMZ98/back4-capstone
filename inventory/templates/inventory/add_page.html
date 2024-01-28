@@ -4,13 +4,16 @@
 <div class="container px-4 pt-2">
    
     <h3>Add {{ type }}</h3>
-    <form action="{% url 'create' %}" method="post">
+    <form action="{% url 'create' %}" method="post" enctype="multipart/form-data">
         <div class="flex mb-3 mt-3">
 
           <div class="row mt-3">
             <div class="col-sm-4">
               <label for="vin" class="form-label">Vehicle Identification Number</label>
               <input type="text" maxlength="30" class="form-control" id="vin" placeholder="Enter VIN" name="vin">
+              {% if message %}
+                <div class="text-danger">{{ message }}</div>
+              {% endif %}
             </div>
             <div class="col-sm-4">
               <label for="brand" class="form-label">Brand</label>
@@ -20,6 +23,7 @@
                  <option value="Chevrolet">Chevrolet</option>
                  <option value="Ferrari">Ferrari</option>
                  <option value="Ford">Ford</option>
+                 <option value="Honda">Honda</option>
                  <option value="Hyundai">Hyundai</option>
                  <option value="Jeep">Jeep</option>
                  <option value="Lamborghini">Lamborghini</option>
@@ -33,22 +37,22 @@
             </div>
             <div class="col-sm-4">
               <label for="model" class="form-label">Vehicle Model</label>
-              <input type="text" class="form-control" id="model" placeholder="Enter vehicle model" name="model">
+              <input type="text" class="form-control" id="model" placeholder="Enter vehicle model" name="model" required>
             </div>
           </div>   
                  
           <div class="row mt-3">
             <div class="col-sm-4">
               <label for="year" class="form-label">Year</label>
-              <input type="number" class="form-control" id="year" placeholder="Enter year" name="year">
+              <input type="number" class="form-control" id="year" placeholder="Enter year" name="year" required>
             </div>
             <div class="col-sm-4">
               <label for="color" class="form-label">Color</label>
-              <input type="text" class="form-control" id="color" placeholder="Enter color" name="color">
+              <input type="text" class="form-control" id="color" placeholder="Enter color" name="color" required>
             </div>
             <div class="col-sm-4">
               <label for="mileage" class="form-label">Mileage (km)</label>
-              <input type="number" class="form-control" id="mileage" placeholder="Enter mileage" name="mileage">
+              <input type="number" class="form-control" id="mileage" placeholder="Enter mileage" name="mileage" required>
             </div>
           </div>
 
@@ -59,11 +63,11 @@
             </div>
             <div class="col-sm-4">
               <label for="costPrice" class="form-label">Cost Price</label>
-              <input type="number" class="form-control" id="costPrice" placeholder="Enter cost price" name="costPrice">
+              <input type="number" class="form-control" id="costPrice" placeholder="Enter cost price" name="costPrice" required>
             </div>
             <div class="col-sm-4">
               <label for="sellingPrice" class="form-label">Selling Price</label>
-              <input type="number" class="form-control" id="sellingPrice" placeholder="Enter selling price" name="sellingPrice">
+              <input type="number" class="form-control" id="sellingPrice" placeholder="Enter selling price" name="sellingPrice" required>
             </div>
           </div>   
                  
@@ -77,7 +81,7 @@
             
               <div class="col-sm-4">
                 <label for="fuelType" class="form-label">Fuel Type</label>
-                <select class="form-select" id="fuelType" name="fuelType">
+                <select class="form-select" id="fuelType" name="fuelType" required>
                   <option value="Petrol">Gasoline (Petrol):</option>
                   <option value="Diesel">Diesel</option>
                   <option value="Hybrid">Hybrid</option>
@@ -89,14 +93,14 @@
 
               <div class="col-sm-4">
                 <label for="fuelCapacityLiters" class="form-label">Fuel Capacity</label>
-                <input type="number" class="form-control" id="fuelCapacityLiters" placeholder="Enter Fuel Capacity" name="fuelCapacityLiters">
+                <input type="number" class="form-control" id="fuelCapacityLiters" placeholder="Enter Fuel Capacity" name="fuelCapacityLiters" required>
               </div>
 
             {% elif stype == 'ev' %}
 
               <div class="col-sm-4">
                 <label for="batteryCapacity" class="form-label">Battery Capacity</label>
-                <input type="number" class="form-control" id="batteryCapacity" placeholder="Enter Battery Capacity" name="batteryCapacity">
+                <input type="number" class="form-control" id="batteryCapacity" placeholder="Enter Battery Capacity" name="batteryCapacity" required>
               </div>
 
             {% endif %}
