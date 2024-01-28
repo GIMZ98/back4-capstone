@@ -5,7 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.views.decorators.http import require_http_methods
 from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.csrf import csrf_exempt, csrf_protect
 
 # Create your views here.
 def index(request):
@@ -15,7 +15,7 @@ def index(request):
         "inventory": Vehicle.get_sum_inventory_value(),
     })
 
-
+@csrf_protect
 def login_view(request):
     if request.method == "POST":
 
@@ -91,7 +91,6 @@ def data_charts(request, chart):
     # Return the data as JSON response
     return JsonResponse(response_data)
 
-
 @csrf_exempt
 @require_http_methods(["POST"])
 def sell(request):
@@ -106,6 +105,7 @@ def sell(request):
     vehicle.save()
     #return JsonResponse({"sold": "yes"})
     return HttpResponseRedirect(reverse("revenues"))
+
 
 @csrf_exempt
 @require_http_methods(["POST"])
