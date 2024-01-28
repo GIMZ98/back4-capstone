@@ -28,7 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://shop-tvj05rin.b4a.run']
 
-
+MEDIA_URL = '/media/'
+MEDIA_ROOT =  BASE_DIR / 'media'
 
 # Application definition
 

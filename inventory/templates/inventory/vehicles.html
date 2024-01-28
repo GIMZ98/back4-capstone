@@ -16,6 +16,7 @@
                 <th>Selling Price ($)</th>
                 <th>Mileage</th>
                 <th>Color</th>
+                <th>Image</th>
             </tr>
             </thead>
             <tbody>
@@ -29,6 +30,13 @@
                     <td>{{ vehicle.selling_price }}</td>
                     <td>{{ vehicle.mileage }}</td>
                     <td>{{ vehicle.color }}</td>
+                    <td>
+                        {% if vehicle.image %}
+                            <a href="{{ vehicle.image.url }}" target="_blank"><img src="{{ vehicle.image.url }}" height="30px" width="30px" alt=""></a>
+                        {% else %}
+                            no image
+                        {% endif %}
+                    </td>
                 </tr>
             {% endfor %}
             
