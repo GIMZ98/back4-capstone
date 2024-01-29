@@ -124,7 +124,6 @@ def add(request):
     model = request.POST["model"]
     year = request.POST["year"]
     color = request.POST["color"]
-    mileage = request.POST["mileage"]
     costPrice = request.POST["costPrice"]
     sellingPrice = request.POST["sellingPrice"]
     type = request.POST["type"]
@@ -139,18 +138,18 @@ def add(request):
     if type == 'car':
         fuelType = request.POST["fuelType"]
         fuelCapacityLiters = request.POST["fuelCapacityLiters"]
-        car = Car.objects.create(brand=brand, model=model, year=year, color=color, mileage=mileage, vin=vin, image=image, cost_price=costPrice, selling_price=sellingPrice, type=type, fuel_type=fuelType, fuel_capacity_liters=fuelCapacityLiters)
+        car = Car.objects.create(brand=brand, model=model, year=year, color=color, vin=vin, image=image, cost_price=costPrice, selling_price=sellingPrice, type=type, fuel_type=fuelType, fuel_capacity_liters=fuelCapacityLiters)
         car.save()
 
     elif type == 'ev':
         batteryCapacity = request.POST["batteryCapacity"]
-        ev = ElectricVehicle.objects.create(brand=brand, model=model, year=year, color=color, mileage=mileage, vin=vin, image=image, cost_price=costPrice, selling_price=sellingPrice, type=type, battery_capacity_kwh=batteryCapacity)
+        ev = ElectricVehicle.objects.create(brand=brand, model=model, year=year, color=color, vin=vin, image=image, cost_price=costPrice, selling_price=sellingPrice, type=type, battery_capacity_kwh=batteryCapacity)
         ev.save()
 
     elif type == 'van':
         fuelType = request.POST["fuelType"]
         fuelCapacityLiters = request.POST["fuelCapacityLiters"]
-        van = Van.objects.create(brand=brand, model=model, year=year, color=color, mileage=mileage, vin=vin, image=image, cost_price=costPrice, selling_price=sellingPrice, type=type, fuel_type=fuelType, fuel_capacity_liters=fuelCapacityLiters)
+        van = Van.objects.create(brand=brand, model=model, year=year, color=color, vin=vin, image=image, cost_price=costPrice, selling_price=sellingPrice, type=type, fuel_type=fuelType, fuel_capacity_liters=fuelCapacityLiters)
         van.save()
          
     #return JsonResponse({"sold": "yes"})

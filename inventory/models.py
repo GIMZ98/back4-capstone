@@ -14,7 +14,6 @@ class Vehicle(models.Model):
     model = models.CharField(max_length=32)
     year = models.IntegerField()
     color = models.CharField(max_length=16)
-    mileage = models.DecimalField(max_digits=10, decimal_places=2)
     vin = models.CharField(max_length=30, unique=True)
     image = models.ImageField(upload_to=get_image_upload_path, null=True, blank=True)
     cost_price = models.DecimalField(max_digits=10, decimal_places=2)
