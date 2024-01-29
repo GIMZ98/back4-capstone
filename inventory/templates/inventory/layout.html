@@ -6,14 +6,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+      .nav-item{
+        font-weight: 500;
+      }
+
+      @media (min-width: 576px) {
+        .min-width-500 {
+            min-width: 460px;
+            max-width: 100%;
+            height: auto;
+        }
+
+      }
+    </style>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventory</title>
 </head>
 <body>
-    <div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="mb-2">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
               <a class="navbar-brand" href="{% url 'index' %}">Home</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
