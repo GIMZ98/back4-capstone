@@ -17,12 +17,6 @@ This application aims to address the specific needs of businesses selling Cars, 
 
 <pre>
 
-To include a folder structure in a GitHub README.md file, you can use Markdown syntax. GitHub-flavored Markdown supports code blocks, which is an excellent way to display folder structures. Here's how you can present the folder structure in your README.md:
-
-markdown
-Copy code
-## Project Structure
-
 shop/
 ├─ inventory/
 │  ├─ migrations/
