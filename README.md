@@ -1,3 +1,8 @@
+## Default Credentials
+
+- **Username:** admin
+- **Password:** admin
+
 ### Distinctiveness and Complexity:
 
 ## Distinctiveness
@@ -176,25 +181,46 @@ executes loadCharts function in utils.js file
 
 ### layout.html
  Serves as a central template providing a consistent  layout for all pages in the application.
-  
-### add_page.html
-  Provides a user interface for adding new vehicles to the Inventory.
 
+### login.html
+ Facilitates user authentication by providing a login interface.
+ <br />
+ ![Screenshot (2276)](https://github.com/GIMZ98/back4-capstone/assets/109029836/5032e2b2-d372-4578-9479-e625ec2b0a35)
+ <br /><br />
+ 
+### add_page.html
+Provides a user interface for adding new vehicles to the Inventory.
+<br />
+![Screenshot (2278)](https://github.com/GIMZ98/back4-capstone/assets/109029836/65023286-0973-4439-9fbf-bd5db31ea8df)
+  <br /><br />
+ 
 ### sell_page.html
   Enables users to sell vehicles by providing an interface where they can enter the buyer's name and select the vehicle for sale.
-  
+  <br />
+  ![Screenshot (2282)](https://github.com/GIMZ98/back4-capstone/assets/109029836/d173672d-ca3b-4f32-9e96-41574014eaf1)
+  <br /><br />
 ### index.html
  Serves as the dashboard for the application, presenting revenues, profit, inventory status, charts at a glance.
   
-### login.html
- Facilitates user authentication by providing a login interface.
-  
 ### revenues.html
  Presents sale data information in a tabular format.
+ <br />
+ ![Screenshot (2284)](https://github.com/GIMZ98/back4-capstone/assets/109029836/151f9a63-b958-4352-928f-ddb53ac10ed6)
+ <br /><br />
   
 ### vehicles.html
 Displays a tabular format listing of all non-sold vehicles in the application. Users can  view vehicle images by clicking on an icon located at the end of each table row.
+<br />
 ![Screenshot (2280)](https://github.com/GIMZ98/back4-capstone/assets/109029836/3a08dcd2-c059-49d2-b82e-3b2cc0ae4542)
+<br /><br />
+ 
+## How to run
+Go to the root directory of the project which contains "manage.py" file
+```cmd
+pip install -r requirements.txt
+python manage.py runserver
+```
+Open  http://127.0.0.1:8000/ on you web browser
 
 
     
