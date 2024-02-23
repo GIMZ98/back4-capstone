@@ -1,5 +1,8 @@
-- username: admin
-- password: admin
+username: admin
+<br />
+password: admin
+<br />
+[Live Demo](https://shop-tvj05rin.b4a.run/)
 <br />
 [YouTube Video](https://www.youtube.com/watch?v=vqMDKPVb3Bc)
 
