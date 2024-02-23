@@ -1,5 +1,5 @@
-username: admin
-password: admin
+- username: admin
+- password: admin
 [YouTube Video](https://www.youtube.com/watch?v=vqMDKPVb3Bc)
 
 ## Distinctiveness and Complexity:
