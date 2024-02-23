@@ -47,7 +47,7 @@ This project is very different  from previous projects due to following reasons.
     <img src="./screenshots/mobile.gif" alt="Mobile Responsive" height="500">
 </figure>
 
-## Default Credentials for loggin
+## Default Credentials for login
 
 - **Username:** admin
 - **Password:** admin
