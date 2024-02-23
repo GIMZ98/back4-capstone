@@ -1,3 +1,7 @@
+username: admin
+password: admin
+[YouTube Video](https://www.youtube.com/watch?v=vqMDKPVb3Bc)
+
 ## Distinctiveness and Complexity:
 
 This application aims to address the specific needs of businesses selling Vehicles. Essentially, this application allows users to keep track of vehicles added and sold. All behicles are catogorized into three types(Cars, EVs and Vehicles). When a user not logged in, they can view the information of all non-sold and sold vehicles in tabular form. When user logged in, additionally they can add new vehicles and sell existing vehicles. This applicaiton consists of a simple dashboard in homepage, and its charts are processed according to sold vehicles and non-sold vehicles. 
