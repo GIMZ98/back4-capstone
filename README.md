@@ -1,7 +1,4 @@
-username: admin
-<br />
-password: admin
-<br />
+## Capstone project for CS50 Web Programming with Python and Javascript
 [Live Demo](https://shop-tvj05rin.b4a.run/)
 <br />
 [YouTube Video](https://www.youtube.com/watch?v=vqMDKPVb3Bc)
