@@ -1,19 +1,53 @@
-### Distinctiveness and Complexity:
+## Distinctiveness and Complexity:
 
-## Distinctiveness
-This application aims to address the specific needs of businesses selling Cars, EVs, and Vans. Its distinctiveness lies in providing a tailored solution for managing sales records and vehicle information, and providing insights of revenues, profits and inventory status in real-time.
+This application aims to address the specific needs of businesses selling Vehicles. Essentially, this application allows users to keep track of vehicles added and sold. All behicles are catogorized into three types(Cars, EVs and Vehicles). When a user not logged in, they can view the information of all non-sold and sold vehicles in tabular form. When user logged in, additionally they can add new vehicles and sell existing vehicles. This applicaiton consists of a simple dashboard in homepage, and its charts are processed according to sold vehicles and non-sold vehicles. 
 
-## Complexity
-- When adding a vehicle to inventory, users have the option to submit a vehicle image if applicable. These images are saved in a dedicated folder('media') at the root directory of the project. This feature was not applied in previous projects.
+<br />
+This is the first page user interacts first. If user is not logged in, they can't see "Sell vehicle" and "Add Vehicle" in the navbar. So only logged-in users can add or sell vehicles.
+In dashboard, "Revenues" represent the total selling prices of sold vehicles, "Profit" represent the sum of difference of selling price and cost price of all sold vehicles, "Inventory" represent the sum of selling prices of non sold vehicles.
+At the bottom there are 3 charts this representing Revenues, Profit and Inventory values by each vehicle type(Cars, EVs, Vans).
+Here I have used chartJS library to build charts. Which wasn't used in previous projects. When the home page is reloading always data is fetched from database to update the dashboard.
+<figure>
+    <img src="./screenshots/home.png" alt="HomePage">
+</figure>
 
-- The project utilizes @require_http_methods decorater provided by django to reduce boilerplate code for few functions in views.py.
+<br />
+This is the page where user can add an EV(Electrice vehicle). Here, user need to enter details of the vehicle and can upload an image if available.
+The attributes like VIN(Vehicle Identificatin Number), Brand, Model... are common to all vehicle types(Car, EV, Van). But fuel type, fuel capacity, battery capacity isn't. 
+So if user adding a Car or a Van, "battery capacity" field as shown below is not shown, instead "Fuel Type" and "Fuel Capacity" is shown.
+When adding an image for a vehicle they are saved on a seperate folder in root directory known 'media'. This feature wasn't used in previous projects.
+<figure>
+    <img src="./screenshots/add.png" alt="Add vehicle">
+</figure>
 
-- The project utilizes chart.js library to display revenues, profits and inventory values by vehicle type as charts
-  
-![Screenshot (2275)](https://github.com/GIMZ98/back4-capstone/assets/109029836/77170a1f-55e4-4980-8b2b-536a6099bef3)
+<br />
+This is where user can view all non sold vehicles in tabular form. User can view the image of vehicle by clicking the icon at end of the row. Which the image is fetched from a seperate folder known 'media'.
+<figure>
+    <img src="./screenshots/vehicles.gif" alt="Non Sold Vehicles">
+</figure>
 
+<br />
+This is where user can view all sold vehicle information such as VIN, selling price, buyer and Sold date in tabular form.
+<figure>
+    <img src="./screenshots/sold.png" alt="Sold Vehicles">
+</figure>
+<hr />
+This project is very different  from previous projects due to following reasons.
 
-## Structure:
+  1. When adding a vehicle to inventory, users have the option to submit a vehicle image if applicable. These images are saved in a dedicated folder('media') at the root directory of the project. This feature was not applied in previous projects.
+  2. The project utilizes @require_http_methods decorater provided by django to reduce boilerplate code for few functions in views.py.
+  3. The project utilizes chart.js library to display revenues, profits and inventory values by vehicle type as charts
+  4. The application is completely mobile responsive.
+<figure>
+    <img src="./screenshots/mobile.gif" alt="Mobile Responsive" height="500">
+</figure>
+
+## Default Credentials for loggin
+
+- **Username:** admin
+- **Password:** admin
+
+## Project Structure:
 
 <pre>
 
@@ -45,6 +79,7 @@ shop/
 │  ├─ settings.py
 │  ├─ urls.py
 │  ├─ wsgi.py
+├─ media/
 </pre>
 
 
@@ -176,27 +211,32 @@ executes loadCharts function in utils.js file
 
 ### layout.html
  Serves as a central template providing a consistent  layout for all pages in the application.
-  
-### add_page.html
-  Provides a user interface for adding new vehicles to the Inventory.
 
-### sell_page.html
-  Enables users to sell vehicles by providing an interface where they can enter the buyer's name and select the vehicle for sale.
-  
-### index.html
- Serves as the dashboard for the application, presenting revenues, profit, inventory status, charts at a glance.
-  
 ### login.html
  Facilitates user authentication by providing a login interface.
+ 
+ 
+### add_page.html
+Provides a user interface for adding new vehicles to the Inventory.
+
+ 
+### sell_page.html
+  Enables users to sell vehicles by providing an interface where they can enter the buyer's name and select the vehicle for sale.
+
+### index.html
+ Serves as the dashboard for the application, presenting revenues, profit, inventory status, charts at a glance.
   
 ### revenues.html
  Presents sale data information in a tabular format.
   
 ### vehicles.html
 Displays a tabular format listing of all non-sold vehicles in the application. Users can  view vehicle images by clicking on an icon located at the end of each table row.
-![Screenshot (2280)](https://github.com/GIMZ98/back4-capstone/assets/109029836/3a08dcd2-c059-49d2-b82e-3b2cc0ae4542)
 
-
-    
-
+## How to run
+Go to the root directory of the project which contains "manage.py" file
+```cmd
+pip install -r requirements.txt
+python manage.py runserver
+```
+Open  http://127.0.0.1:8000/ on your web browser
 
