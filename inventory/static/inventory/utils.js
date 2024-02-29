@@ -65,7 +65,7 @@ async function vehicle_profit_chart(){
       'Vans'
     ],
     datasets: [{
-      label: 'Revenues Distribution',
+      label: 'Profit Distribution',
       data: await fetchData('profits'),
       backgroundColor: [
         'rgb(255, 165, 100)',
@@ -96,7 +96,7 @@ async function vehicle_inventory_chart(){
       'Vans'
     ],
     datasets: [{
-      label: 'Revenues Distribution',
+      label: 'Inventory Distribution',
       data: await fetchData('unsold'),
       backgroundColor: [
         'rgb(255, 165, 100)',
