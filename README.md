@@ -1,3 +1,8 @@
+## Capstone project for CS50 Web Programming with Python and Javascript
+[Live Demo](https://shop-tvj05rin.b4a.run/)
+<br />
+[YouTube Video](https://www.youtube.com/watch?v=vqMDKPVb3Bc)
+
 ## Distinctiveness and Complexity:
 
 This application aims to address the specific needs of businesses selling Vehicles. Essentially, this application allows users to keep track of vehicles added and sold. All behicles are catogorized into three types(Cars, EVs and Vehicles). When a user not logged in, they can view the information of all non-sold and sold vehicles in tabular form. When user logged in, additionally they can add new vehicles and sell existing vehicles. This applicaiton consists of a simple dashboard in homepage, and its charts are processed according to sold vehicles and non-sold vehicles. 
@@ -42,7 +47,7 @@ This project is very different  from previous projects due to following reasons.
     <img src="./screenshots/mobile.gif" alt="Mobile Responsive" height="500">
 </figure>
 
-## Default Credentials for loggin
+## Default Credentials for login
 
 - **Username:** admin
 - **Password:** admin
